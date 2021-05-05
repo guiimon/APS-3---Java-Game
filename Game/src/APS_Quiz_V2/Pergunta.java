@@ -7,9 +7,7 @@ public abstract class Pergunta {
     //Atributos:
     private static int qtdPerguntas;
     private Scanner tecla = new Scanner(System.in);
-    protected static int numeroPerguntas = 3;
-    protected final String[][] perguntas = new String[getQtdPerguntas()][2];
-
+    
 
     //Construtor:
     public Pergunta(int quantidade) {
@@ -20,6 +18,15 @@ public abstract class Pergunta {
     public abstract void definirPerguntas(String[][] pergunta);
     public abstract void checarResposta(int numeroPergunta, String resposta, Player jogador);
     public abstract void executarPergunta(int numero, Player jogador);
+    
+    public void verificar(String resposta) {//verifica se a resposta foi valida a,b,c,d ou e 
+        Scanner r  = new Scanner(System.in);
+        //acho que pode ser melhorado
+        while (!"a".equals(resposta) && !"b".equals(resposta) && !"c".equals(resposta) && !"d".equals(resposta) && !"e".equals(resposta)) {
+            System.out.println("Resposta Inválida! Digite somente uma das opções acima."); 
+            resposta = r.nextLine();        
+        }
+    }
 
     //Geters e Seters:
     public Scanner getTecla() {
@@ -34,8 +41,6 @@ public abstract class Pergunta {
             Pergunta.qtdPerguntas = qtdPerguntas;
     }
     
-    public String[][] getPerguntas() {
-        return perguntas;
-    }
+    
 
 }
