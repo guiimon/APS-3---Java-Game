@@ -30,17 +30,17 @@ public class Player {
     }
 
     public void defineResultado() {
-        System.out.println("Sua pontuação foi de " + getPontuacao() + " pontos.");
+        System.out.println("Sua pontuacao foi de " + getPontuacao() + " pontos.");
         if(getPontuacao() < 0) {
-                System.out.println("Seu resultado é pior do que jamais esperávamos, n�o ouse nem sair de casa voc� � um risco.");
+                System.out.println("Seu resultado e pior do que jamais esperavamos, nao ouse nem sair de casa voce e um risco.");
         }
         else if(getPontuacao() >= 0 && getPontuacao() <=30) {
-                System.out.println("Seu resultado foi mediano, ainda h� muitas coisas para aprender sobre a natureza.");
+                System.out.println("Seu resultado foi mediano, ainda ha muitas coisas para aprender sobre a natureza.");
         }
         else if(getPontuacao() > 30 && getPontuacao() != 50) {
-                System.out.println("Otimo resultado, cometeu alguns erros mas est� muito bem em seus conhecimetos sobre a natureza");
+                System.out.println("Otimo resultado, cometeu alguns erros mas esta muito bem em seus conhecimetos sobre a natureza");
         }else {
-                System.out.println("Coma nossos cus mestre, n�o h� nada para ser ensinado a voc� aqui.");
+                System.out.println("Coma nossos cus mestre, nao ha nada para ser ensinado a voce aqui.");
         }
     }
 

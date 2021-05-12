@@ -2,12 +2,18 @@ package APS_Quiz_V2;
 
 public class PerguntaComplexa extends Pergunta{
     //atributos
-    private static final int numeroPerguntas = 1;
+    private static final int numeroPerguntas = 10;
     private final String[][] perguntaIni = new String[super.getQtdPerguntas()][6];
     private final String[][] perguntaMeio = new String[super.getQtdPerguntas()][6];
-    private final String[][] perguntaFim = new String[super.getQtdPerguntas()][7];  
+    private final String[][] perguntaFim = new String[super.getQtdPerguntas()][7]; 
     
-    //getters
+    //construtor
+    public PerguntaComplexa() {
+       super(numeroPerguntas);
+       definirPerguntas(getPerguntaIni(), getPerguntaMeio(), getPerguntaFim());
+    }
+    
+    //getters & setters
     public String[][] getPerguntaIni() {
         return perguntaIni;
     }
@@ -18,12 +24,6 @@ public class PerguntaComplexa extends Pergunta{
 
     public String[][] getPerguntaFim() {
         return perguntaFim;
-    }
-
-    //construtor
-     public PerguntaComplexa() {
-        super(numeroPerguntas);
-        definirPerguntas(getPerguntaIni(), getPerguntaMeio(), getPerguntaFim());
     }
    
     //metodos pricipais
@@ -92,7 +92,7 @@ public class PerguntaComplexa extends Pergunta{
     }
 
     public String completarTexto(String texto,String [][] pergunta, String resposta, int numero) {
-        //retorna o valor do texto implementando o espaço em branco depois que o primeiro texto foi aplicado em uma variavel;
+        //retorna o valor do texto implementando o espaco em branco depois que o primeiro texto foi aplicado em uma variavel;
         String resultado = "";
         switch (resposta.toLowerCase()) {
         case "a":
@@ -123,10 +123,10 @@ public class PerguntaComplexa extends Pergunta{
     public void definirPerguntas(String[][] p1, String[][] p2, String[][] p3) {
         /*
         //Molde de como criar uma pergunta composta
-        //Cada pergunta deve conter um campo de 5 underlines "_" para que seja substituida pela opção de resposta do usuário.
+        //Cada pergunta deve conter um campo de 5 underlines "_" para que seja substituida pela opcao de resposta do usuario.
         //o valor da primeria cordenada dos vetores deve ser o mesmo em todas as partes da mesma pergunta.
         //-Primeiro enunciado-
-        p1[0][0] = "";
+        p1[][0] = "";
         //-opçoes-
         p1[][1] = "a) .";
         p1[][2] = "b) .";
@@ -149,35 +149,35 @@ public class PerguntaComplexa extends Pergunta{
         p3[][3] = "c) .";
         p3[][4] = "d) .";
         p3[][5] = "e) .";
-        //-resposta composta da junção das 3 letras corretas-
+        //-resposta composta da juncao das 3 letras corretas-
         p3[][6] = "";
         */
 
         //-Primeiro enunciado-
-        p1[0][0] = "Você entra em uma floresta e se encontra com um urso, ao perceber que ele te viu você _____.";
-        //-opções-
+        p1[0][0] = "Voce entra em uma floresta e se encontra com um urso, ao perceber que ele te viu voce _____.";
+        //-opcoes-
         p1[0][1] = "a)Corre.";
-        p1[0][2] = "b)Chama a polícia.";
+        p1[0][2] = "b)Chama a policia.";
         p1[0][3] = "c)Brinca com ele.";
-        p1[0][4] = "d)Chama de totó.";
-        p1[0][5] = "e)O pede para respeitar seu espaço pessoal.";
+        p1[0][4] = "d)Chama de toto.";
+        p1[0][5] = "e)O pede para respeitar seu espaco pessoal.";
         //-Segundo Enunciado-
-        p2[0][0] = " \nApós isso é necessario tomar mais uma ação: _____.";
-        //-opções do segundo-
+        p2[0][0] = " \nApos isso e necessario tomar mais uma acao: _____.";
+        //-opcoes do segundo-
         p2[0][1] = "a)Fugir de casa.";
-        p2[0][2] = "b)Dan�ar com o Urso.";
+        p2[0][2] = "b)Dancar com o Urso.";
         p2[0][3] = "c)Chamar ele de gostosa.";
-        p2[0][4] = "d)Manter a calma para não assustá-lo.";
+        p2[0][4] = "d)Manter a calma para nao assusta-lo.";
         p2[0][5] = "e)Sobir uma arvore.";
         //-terceiro Enunciado-
-        p3[0][0] = " E para garantir que você saia dessa situação com segurança é necessario por fim _____.";
+        p3[0][0] = " E para garantir que voce saia dessa situacao com seguranca e necessario por fim _____.";
         //-opcoes do terceiro-
         p3[0][1] = "a)Rezar por um milagre.";
         p3[0][2] = "b)Se afastar do urso sem virar suas costas para ele.";
         p3[0][3] = "c)Fingir estar morto.";
         p3[0][4] = "d)Confundir ele com fotos de animais.";
-        p3[0][5] = "e)Abraça-lo e pedir desculpas por incomodar.";
-        //-resposta composta da junção das 3 letras corretas-
+        p3[0][5] = "e)Abraca-lo e pedir desculpas por incomodar.";
+        //-resposta composta da juncao das 3 letras corretas-
         p3[0][6] = "bdb";
 
     }

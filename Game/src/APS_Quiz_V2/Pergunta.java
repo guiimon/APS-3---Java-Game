@@ -14,20 +14,6 @@ public abstract class Pergunta {
             setQtdPerguntas(quantidade);
     }
     
-    //Principal:
-    public abstract void definirPerguntas(String[][] pergunta);
-    public abstract void checarResposta(int numeroPergunta, String resposta, Player jogador);
-    public abstract void executarPergunta(int numero, Player jogador);
-    
-    public void verificar(String resposta) {//verifica se a resposta foi valida a,b,c,d ou e 
-        Scanner r  = new Scanner(System.in);
-        //acho que pode ser melhorado
-        while (!"a".equals(resposta) && !"b".equals(resposta) && !"c".equals(resposta) && !"d".equals(resposta) && !"e".equals(resposta)) {
-            System.out.println("Resposta Inválida! Digite somente uma das opções acima."); 
-            resposta = r.nextLine();        
-        }
-    }
-
     //Geters e Seters:
     public Scanner getTecla() {
             return tecla;
@@ -41,6 +27,18 @@ public abstract class Pergunta {
             Pergunta.qtdPerguntas = qtdPerguntas;
     }
     
+    //Principal:
+    public abstract void definirPerguntas(String[][] pergunta);
+    public abstract void checarResposta(int numeroPergunta, String resposta, Player jogador);
+    public abstract void executarPergunta(int numero, Player jogador);
     
-
+    public void verificar(String resposta) {//verifica se a resposta foi valida a,b,c,d ou e 
+        Scanner r  = new Scanner(System.in);
+        //acho que pode ser melhorado
+        while (!"a".equals(resposta) && !"b".equals(resposta) && !"c".equals(resposta) && !"d".equals(resposta) && !"e".equals(resposta)) {
+            System.out.println("Resposta Invalida! Digite somente uma das opcoes acima."); 
+            resposta = r.nextLine();        
+        }
+        r.close();
+    }
 }
