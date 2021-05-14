@@ -1,6 +1,5 @@
-package quiz_v2;
+package quiz_v3;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class PerguntaNumerica extends Pergunta {
@@ -41,12 +40,14 @@ public class PerguntaNumerica extends Pergunta {
     public void executarPergunta(int numero, Player jogador) {
         int resposta = 0;
         System.out.println(getPerguntas()[numero]);
-        String respostaS = tecla.nextLine().trim();
+        String respostaS = super.getTecla().nextLine().trim();
         while (verificar(respostaS)) {
+            System.out.println("");
             System.out.println("Resposta Invalida! Digite somente numeros positivos.");
             System.out.println(getPerguntas()[numero]);
-            respostaS = tecla.nextLine().trim();           
+            respostaS = super.getTecla().nextLine().trim();           
         }
+        System.out.println("");
         
         resposta = Integer.parseInt(respostaS);      
         checarResposta(numero, resposta, jogador);

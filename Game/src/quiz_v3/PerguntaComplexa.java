@@ -1,4 +1,4 @@
-package quiz_v2;
+package quiz_v3;
 
 public class PerguntaComplexa extends Pergunta {
 
@@ -46,7 +46,9 @@ public class PerguntaComplexa extends Pergunta {
         System.out.println("Escolha a alternativa que completa o texto acima: ");
         System.out.println(escreveOpcoes(numero, getPerguntaIni()));
         respostaA = super.getTecla().nextLine().toLowerCase().trim();
+        
         while (verificar(respostaA)) {
+            System.out.println("");
             System.out.println("Resposta Invalida! Digite somente uma das alternativas listada.");
             System.out.println(getPerguntaIni()[numero][0]);
             System.out.println("Escolha a alternativa que completa o texto acima: ");
@@ -56,13 +58,16 @@ public class PerguntaComplexa extends Pergunta {
         respostaF += respostaA;              
         
         //Segunda Pergunta
+        System.out.println("");
         texto = completarTexto(getPerguntaIni(), respostaA, numero);
         texto += getPerguntaMeio()[numero][0];
         System.out.println(texto); //exibe pergunta inicial completada pela resposta e pegunta meio
         System.out.println("Escolha a alternativa que completa o texto acima: ");
         System.out.println(escreveOpcoes(numero, getPerguntaMeio()));
         respostaA = super.getTecla().nextLine().toLowerCase().trim();
+        
         while (verificar(respostaA)) {
+            System.out.println("");
             System.out.println("Resposta Invalida! Digite somente uma das alternativas listada.");
             System.out.println(texto);
             System.out.println("Escolha a alternativa que completa o texto acima: ");
@@ -72,19 +77,23 @@ public class PerguntaComplexa extends Pergunta {
         respostaF += respostaA;
 
         //Terceira Pergunta
+        System.out.println("");
         texto = completarTexto(texto, getPerguntaMeio(), respostaA, numero);
         texto += getPerguntaFim()[numero][0];
         System.out.println(texto); //exibe pergunta inicial e meio completa e a pergunta fim
         System.out.println("Escolha a alternativa que completa o texto acima: ");
         System.out.println(escreveOpcoes(numero, getPerguntaFim()));
         respostaA = super.getTecla().nextLine().toLowerCase().trim();
+        
         while (verificar(respostaA)) {
+            System.out.println("");
             System.out.println("Resposta Invalida! Digite somente uma das alternativas listada.");
             System.out.println(texto);
             System.out.println("Escolha a alternativa que completa o texto acima: ");
             System.out.println(escreveOpcoes(numero, getPerguntaFim()));
             respostaA = super.getTecla().nextLine().toLowerCase().trim();
         }
+        System.out.println("");
         respostaF += respostaA;
 
         checarResposta(numero, respostaF, jogador);

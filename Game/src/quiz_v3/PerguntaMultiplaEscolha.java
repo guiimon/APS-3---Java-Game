@@ -1,4 +1,4 @@
-package quiz_v2;
+package quiz_v3;
 
 public class PerguntaMultiplaEscolha extends Pergunta {
 
@@ -48,13 +48,15 @@ public class PerguntaMultiplaEscolha extends Pergunta {
     }
 
     public void executarPergunta(int numero, Player jogador) {
-        System.out.println(getPerguntas()[numero]);
+        System.out.print(getPerguntas()[numero]);
         String resposta = super.getTecla().nextLine().toLowerCase().trim();
         while (verificar(resposta)) {
+            System.out.println("");
             System.out.println("Resposta Invalida! Digite somente uma das alternativas listada.");
             System.out.println(getPerguntas()[numero]);
             resposta = super.getTecla().nextLine().toLowerCase().trim();
         }
+        System.out.println("");
 
         checarResposta(numero, resposta, jogador);   
     }
