@@ -17,8 +17,7 @@ public class PerguntaSN extends Pergunta {
 
     //metodos principais
     public void definirPerguntas() {
-        perguntas[0] = "O efeito estufa é um evento decorrente da quebra da camada de ozônio?\n"
-                + "Responda com [s] para sim e [n] para não.\n";
+        perguntas[0] = "O efeito estufa é um evento decorrente da quebra da camada de ozônio?\n";                
         respostas[0] = "n";
     }
 
@@ -39,18 +38,21 @@ public class PerguntaSN extends Pergunta {
     }
 
     @Override
-    public void executarPergunta(int numero, Player jogador) {
+    public void executarPergunta(int numero, Player jogador) {       
         System.out.print(getPerguntas()[numero]);
+        System.out.println("Responda com [s] para sim e [n] para não.");
         String resposta = super.getTecla().nextLine().toLowerCase().trim();
         while (verificar(resposta)) {
             System.out.println("");
             System.out.println("Resposta Invalida! Digite somente [s] ou [n].");
             System.out.println(getPerguntas()[numero]);
+            System.out.println("Responda com [s] para sim e [n] para não.");
             resposta = super.getTecla().nextLine().toLowerCase().trim();
         }
         System.out.println("");
 
         checarResposta(numero, resposta, jogador);
+        limpar();
     }
 
     //gtetters e setters

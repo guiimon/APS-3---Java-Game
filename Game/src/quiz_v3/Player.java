@@ -34,7 +34,7 @@ public class Player {
         if (getPontuacao() < 0) {
             System.out.println(nome + ", seu resultado e pior do que jamais esperavamos, nao ouse nem sair de casa voce e um risco.");
         } else if (getPontuacao() >= 0 && getPontuacao() <= 30) {
-            System.out.println("Seu resultado foi mediano " + nome + " , ainda ha muitas coisas para aprender sobre a natureza.");
+            System.out.println("Seu resultado foi mediano " + nome + ", ainda ha muitas coisas para aprender sobre a natureza.");
         } else if (getPontuacao() > 30 && getPontuacao() != 50) {
             System.out.println("Otimo resultado " + nome + ", cometeu alguns erros mas esta muito bem em seus conhecimetos sobre a natureza");
         } else {                
