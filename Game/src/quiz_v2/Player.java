@@ -1,5 +1,5 @@
 
-package APS_Quiz_V2;
+package quiz_v2;
 
 public class Player {
     //Atributos:
