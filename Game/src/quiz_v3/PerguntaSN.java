@@ -17,7 +17,7 @@ public class PerguntaSN extends Pergunta {
 
     //metodos principais
     public void definirPerguntas() {
-        perguntas[0] = "O efeito estufa é um evento decorrente da quebra da camada de ozônio?\n";                
+        perguntas[0] = "O efeito estufa é um evento decorrente da quebra da camada de ozônio?";                
         respostas[0] = "n";
     }
 
@@ -30,35 +30,31 @@ public class PerguntaSN extends Pergunta {
         }
     }
 
-    //return resposta != null && resposta.matches("[0-9]*") && resposta != "";
+    
     @Override
     public boolean verificar(String resposta) {
-        return !"s".equals(resposta) && !"n".equals(resposta);
-
+        //return !"s".equals(resposta) && !"n".equals(resposta);
+        return !(resposta != null && resposta.matches("s|n") && resposta != "");
     }
 
-    @Override
     public void executarPergunta(int numero, Player jogador) {       
-        System.out.print(getPerguntas()[numero]);
-        System.out.println("Responda com [s] para sim e [n] para não.");
-        String resposta = super.getTecla().nextLine().toLowerCase().trim();
-        while (verificar(resposta)) {
-            System.out.println("");
-            System.out.println("Resposta Invalida! Digite somente [s] ou [n].");
             System.out.println(getPerguntas()[numero]);
             System.out.println("Responda com [s] para sim e [n] para não.");
-            resposta = super.getTecla().nextLine().toLowerCase().trim();
-        }
-        System.out.println("");
+            String resposta = super.getTecla().nextLine().toLowerCase().trim();            
+            while (verificar(resposta)) {
+                System.out.println("");
+                System.out.println("Resposta Invalida! Digite somente [s] ou [n].");
+                System.out.println(getPerguntas()[numero]);
+                System.out.println("Responda com [s] para sim e [n] para não.");
+                resposta = super.getTecla().nextLine().toLowerCase().trim();
+            }            
+            System.out.println("");
 
-        checarResposta(numero, resposta, jogador);
-        limpar();
+            checarResposta(numero, resposta, jogador);
+            limpar();           
     }
 
-    //gtetters e setters
-    public static int getNumeroPerguntas() {
-        return N_PERGUNTAS;
-    }
+    //getters e setters
 
     public String[] getPerguntas() {
         return perguntas;

@@ -39,8 +39,8 @@ public abstract class Pergunta {
     public abstract void executarPergunta(int numero, Player jogador);
 
     public boolean verificar(String resposta) {
-        return !"a".equals(resposta) && !"b".equals(resposta) && !"c".equals(resposta) && !"d".equals(resposta) && !"e".equals(resposta);
-
+        //return !"a".equals(resposta) && !"b".equals(resposta) && !"c".equals(resposta) && !"d".equals(resposta) && !"e".equals(resposta);
+        return !(resposta != null && resposta.matches("a|b|c|d|e") && resposta != "");
     }
 
 }
