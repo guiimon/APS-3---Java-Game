@@ -37,29 +37,24 @@ public class PerguntaSN extends Pergunta {
         return !(resposta != null && resposta.matches("s|n") && resposta != "");
     }
 
-    
     public void executarPergunta(int numero, Player jogador) {       
             System.out.println(getPerguntas()[numero]);
             System.out.println("Responda com [s] para sim e [n] para não.");
-            String resposta = super.getTecla().nextLine().toLowerCase().trim();                            
+            String resposta = super.getTecla().nextLine().toLowerCase().trim();            
             while (verificar(resposta)) {
                 System.out.println("");
                 System.out.println("Resposta Invalida! Digite somente [s] ou [n].");
                 System.out.println(getPerguntas()[numero]);
                 System.out.println("Responda com [s] para sim e [n] para não.");
                 resposta = super.getTecla().nextLine().toLowerCase().trim();
-            }
+            }            
             System.out.println("");
 
             checarResposta(numero, resposta, jogador);
-            limpar();
-            
+            limpar();           
     }
 
     //getters e setters
-    public static int getNumeroPerguntas() {
-        return N_PERGUNTAS;
-    }
 
     public String[] getPerguntas() {
         return perguntas;

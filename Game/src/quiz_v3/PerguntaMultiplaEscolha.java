@@ -43,7 +43,7 @@ public class PerguntaMultiplaEscolha extends Pergunta {
 
     @Override
     public void checarResposta(int numeroPergunta, String resposta, Player jogador) {
-        if (respostas[numeroPergunta].equals(resposta)) {
+        if (respostas[numeroPergunta].equals(resposta.toLowerCase().trim())) {
             jogador.adicionaPontos();
         } else {
             jogador.retiraPontos();

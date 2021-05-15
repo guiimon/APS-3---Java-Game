@@ -24,7 +24,7 @@ public class PerguntaNumerica extends Pergunta {
     }
 
     public void checarResposta(int numeroPergunta, int resposta, Player jogador) {                
-            if (respostas[numeroPergunta] == resposta) {
+            if (respostas[numeroPergunta] == (resposta)) {
                 jogador.adicionaPontos();
             } else {
                 jogador.retiraPontos();

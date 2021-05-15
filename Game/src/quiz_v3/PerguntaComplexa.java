@@ -6,7 +6,8 @@ public class PerguntaComplexa extends Pergunta {
     private static final int N_PERGUNTAS = 10;
     private final String[][] perguntaIni = new String[super.getQtdPerguntas()][6];
     private final String[][] perguntaMeio = new String[super.getQtdPerguntas()][6];
-    private final String[][] perguntaFim = new String[super.getQtdPerguntas()][7];
+    private final String[][] perguntaFim = new String[super.getQtdPerguntas()][6];
+    private final String[] respostas = new String[super.getQtdPerguntas()];
 
     //construtor
     public PerguntaComplexa() {
@@ -29,7 +30,7 @@ public class PerguntaComplexa extends Pergunta {
 
     //metodos pricipais
     public void checarResposta(int numeroPergunta, String resposta, Player jogador) {
-        if (getPerguntaFim()[numeroPergunta][6].equals(resposta.toLowerCase())) {
+        if (respostas[numeroPergunta].equals(resposta.toLowerCase().trim())) {
             jogador.adicionaPontos();
         } else {
             jogador.retiraPontos();
@@ -209,7 +210,7 @@ public class PerguntaComplexa extends Pergunta {
         perguntaFim[0][4] = "d)Confundir ele com fotos de animais.";
         perguntaFim[0][5] = "e)Abraca-lo e pedir desculpas por incomodar.";
         //-resposta composta da juncao das 3 letras corretas-
-        perguntaFim[0][6] = "bdb";
+        respostas[0] = "bdb";
 
     }
 
