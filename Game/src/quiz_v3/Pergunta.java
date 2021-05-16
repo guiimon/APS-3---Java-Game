@@ -29,7 +29,7 @@ public abstract class Pergunta {
     //Principal:
     public final static void limpar() {
         //limpa a tela do console 
-
+        
     }
 
     public abstract void definirPerguntas();
@@ -40,7 +40,16 @@ public abstract class Pergunta {
 
     public boolean verificar(String resposta) {
         //return !"a".equals(resposta) && !"b".equals(resposta) && !"c".equals(resposta) && !"d".equals(resposta) && !"e".equals(resposta);
-        return !(resposta != null && resposta.matches("a|b|c|d|e") && resposta != "");
+        return !(resposta != null && resposta.matches("a|b|c|d|e") && !"".equals(resposta));
+    }
+    
+    public void verificarErro(String resposta, String tipo) throws RespostaInvalidaException {
+        if ("sn".equals(tipo.toLowerCase().trim())) {
+            if (verificar(resposta)) {
+                throw new RespostaInvalidaException("Resposta Invalida");
+                 
+            }
+        }
     }
 
 }

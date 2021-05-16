@@ -22,9 +22,19 @@ public class PerguntaNumerica extends Pergunta {
 
     @Override
     public boolean verificar(String resposta) {
-        return !(resposta != null && resposta.matches("[0-9]*") && resposta != "");
+        return !(resposta != null && resposta.matches("[0-9]*") && !"".equals(resposta));
     }
 
+    @Override
+    public void checarResposta(int numeroPergunta, String resposta, Player jogador) {
+        int respostaInt = Integer.parseInt(resposta);
+        if (respostas[numeroPergunta] == (respostaInt)) {
+            jogador.adicionaPontos();
+        } else {
+            jogador.retiraPontos();
+        }
+    }
+    
     @Override
     public void executarPergunta(int numero, Player jogador) {
         System.out.println(getPerguntas()[numero]);
@@ -46,16 +56,6 @@ public class PerguntaNumerica extends Pergunta {
 
     public int[] getRespostas() {
         return respostas;
-    }
-
-    @Override //como nesse tipo de pergunta o vetor de resposta � int, esse método fica sobrando.
-    public void checarResposta(int numeroPergunta, String resposta, Player jogador) {
-        int respostaInt = Integer.parseInt(resposta);
-        if (respostas[numeroPergunta] == (respostaInt)) {
-            jogador.adicionaPontos();
-        } else {
-            jogador.retiraPontos();
-        }
     }
 
 }

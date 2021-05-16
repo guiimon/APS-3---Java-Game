@@ -21,9 +21,9 @@ public class Gerenciador {
                 + "apos as 10 pertuntas o seu resultado sera apresentado na tela.\n\n"
                 + "Digite [s] para prosseguir ou [n] para fechar o jogo.");
         String resposta = tecla.nextLine();
-        if (resposta.toLowerCase().equals("s")) {
+        if (resposta.toLowerCase().trim().equals("s")) {
             Iniciar(tecla);
-        } else if (resposta.toLowerCase().equals("n")) {
+        } else if (resposta.toLowerCase().trim().equals("n")) {
             tecla.close();
             fecharJogo();
         } else {
@@ -61,8 +61,8 @@ public class Gerenciador {
         do {
             System.out.println("Jogar novamente?\n[s] para sim [n] para n�o");
             System.out.print("Resposta: ");
-            resposta = tecla.nextLine();
-            if (resposta.toLowerCase().equals("s")) {
+            resposta = tecla.nextLine().toLowerCase().trim();
+            if (resposta.equals("s")) {
                 Iniciar(tecla);
             } else if (resposta.toLowerCase().equals("n")) {
                 tecla.close();
@@ -70,7 +70,7 @@ public class Gerenciador {
             } else {
                 System.out.println("Comando n�o reconhecido");
             }
-        } while (!resposta.toLowerCase().matches("s|n"));
+        } while (!resposta.matches("s|n"));
     }
 
     public void gerarNumeros() {
