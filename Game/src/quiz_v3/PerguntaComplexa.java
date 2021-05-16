@@ -39,13 +39,14 @@ public class PerguntaComplexa extends Pergunta {
 
     public void executarPergunta(int numero, Player jogador) {
         //"respostaF" vai guardar os valores de resposta de cada pergunta juntos, "respostaA" vai guardar os valores individuais por um momento
-        //"texto" vai ser utilizado para mostrar o texto das perguntas preenchido com as opções que o usuário escolher
+        //"texto" vai ser utilizado para mostrar o texto das perguntas preenchido com as opcoes que o usuario escolher
         String respostaF = "", respostaA, texto;
         
         //Primeira Pergunta
         System.out.println(getPerguntaIni()[numero][0]);
         System.out.println("Escolha a alternativa que completa o texto acima: ");
         System.out.println(escreveOpcoes(numero, getPerguntaIni()));
+        System.out.print("Resposta: ");
         respostaA = super.getTecla().nextLine().toLowerCase().trim();
         
         while (verificar(respostaA)) {
@@ -54,6 +55,7 @@ public class PerguntaComplexa extends Pergunta {
             System.out.println(getPerguntaIni()[numero][0]);
             System.out.println("Escolha a alternativa que completa o texto acima: ");
             System.out.println(escreveOpcoes(numero, getPerguntaIni()));
+            System.out.print("Resposta: ");
             respostaA = super.getTecla().nextLine().toLowerCase().trim();
         }
         respostaF += respostaA;              
@@ -65,6 +67,7 @@ public class PerguntaComplexa extends Pergunta {
         System.out.println(texto); //exibe pergunta inicial completada pela resposta e pegunta meio
         System.out.println("Escolha a alternativa que completa o texto acima: ");
         System.out.println(escreveOpcoes(numero, getPerguntaMeio()));
+        System.out.print("Resposta: ");
         respostaA = super.getTecla().nextLine().toLowerCase().trim();
         
         while (verificar(respostaA)) {
@@ -72,7 +75,9 @@ public class PerguntaComplexa extends Pergunta {
             System.out.println("Resposta Invalida! Digite somente uma das alternativas listada.");
             System.out.println(texto);
             System.out.println("Escolha a alternativa que completa o texto acima: ");
-            System.out.println(escreveOpcoes(numero, getPerguntaMeio()));          
+            System.out.println(escreveOpcoes(numero, getPerguntaMeio()));
+            System.out.print("Resposta: ");
+            
             respostaA = super.getTecla().nextLine().toLowerCase().trim();
         }
         respostaF += respostaA;
@@ -84,6 +89,7 @@ public class PerguntaComplexa extends Pergunta {
         System.out.println(texto); //exibe pergunta inicial e meio completa e a pergunta fim
         System.out.println("Escolha a alternativa que completa o texto acima: ");
         System.out.println(escreveOpcoes(numero, getPerguntaFim()));
+        System.out.print("Resposta: ");
         respostaA = super.getTecla().nextLine().toLowerCase().trim();
         
         while (verificar(respostaA)) {
@@ -92,11 +98,14 @@ public class PerguntaComplexa extends Pergunta {
             System.out.println(texto);
             System.out.println("Escolha a alternativa que completa o texto acima: ");
             System.out.println(escreveOpcoes(numero, getPerguntaFim()));
+            System.out.print("Resposta: ");
             respostaA = super.getTecla().nextLine().toLowerCase().trim();
         }
-        System.out.println("");
         respostaF += respostaA;
-
+        
+        texto = completarTexto(texto, getPerguntaFim(), respostaA, numero);
+        System.out.println("Resultado: ");
+        System.out.println(texto);
         checarResposta(numero, respostaF, jogador);
     }
 
@@ -158,31 +167,31 @@ public class PerguntaComplexa extends Pergunta {
         //Cada pergunta deve conter um campo de 5 underlines "_" para que seja substituida pela opcao de resposta do usuario.
         //o valor da primeria cordenada dos vetores deve ser o mesmo em todas as partes da mesma pergunta.
         //-Primeiro enunciado-
-        p1[][0] = "";
+        perguntaIni[][0] = "";
         //-opçoes-
-        p1[][1] = "a) .";
-        p1[][2] = "b) .";
-        p1[][3] = "c) .";
-        p1[][4] = "d) .";
-        p1[][5] = "e) .";
+        perguntaIni[][1] = "a) .";
+        perguntaIni[][2] = "b) .";
+        perguntaIni[][3] = "c) .";
+        perguntaIni[][4] = "d) .";
+        perguntaIni[][5] = "e) .";
         //-Segundo Enunciado-
-        p2[][0] = "";
+        perguntaMeio[][0] = "";
         //-opções do segundo-
-        p2[][1] = "a) .";
-        p2[][2] = "b) .";
-        p2[][3] = "c) .";
-        p2[][4] = "d) .";
-        p2[][5] = "e) .";
+        perguntaMeio[][1] = "a) .";
+        perguntaMeio[][2] = "b) .";
+        perguntaMeio[][3] = "c) .";
+        perguntaMeio[][4] = "d) .";
+        perguntaMeio[][5] = "e) .";
         //-terceiro Enunciado-
-        p3[][0] = "";
+        perguntaFim[][0] = "";
         //-opcoes do terceiro-
-        p3[][1] = "a) .";
-        p3[][2] = "b) .";
-        p3[][3] = "c) .";
-        p3[][4] = "d) .";
-        p3[][5] = "e) .";
+        perguntaFim[][1] = "a) .";
+        perguntaFim[][2] = "b) .";
+        perguntaFim[][3] = "c) .";
+        perguntaFim[][4] = "d) .";
+        perguntaFim[][5] = "e) .";
         //-resposta composta da juncao das 3 letras corretas-
-        p3[][6] = "";
+        respostas[] = "";
          */
 
         //-Primeiro enunciado-

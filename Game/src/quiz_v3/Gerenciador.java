@@ -1,6 +1,7 @@
 package quiz_v3;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Gerenciador {
 
@@ -8,18 +9,77 @@ public class Gerenciador {
     private static int qtd = 10;
 
     public Gerenciador() {
-        Gerar();
+    	Scanner tecla = new Scanner(System.in);
+    	menuInicial(tecla);
     }
-
-    public void Gerar() {
+    
+    public void menuInicial(Scanner tecla) {
+    	System.out.println("Bem vindo ao (insira aqui o nome do jogo)!!!\n"
+    					 + "\n-Regras-\n"
+    					 + "Voce respondera 10 perguntas aletorias dos diferentes tipos de pergunta existentes\n"
+    					 + "para cada acerto 10 pontos serao adicionados ao seu score, a cada erro 10 pontos serao retirados\n"
+    					 + "apos as 10 pertuntas o seu resultado sera apresentado na tela.\n\n"
+    					 + "Digite [s] para prosseguir ou [n] para fechar o jogo.");
+    	String resposta = tecla.nextLine();
+    	if (resposta.toLowerCase().equals("s")) { 
+    		Iniciar(tecla);
+    	}
+    	else if(resposta.toLowerCase().equals("n")){
+        	tecla.close();
+    		fecharJogo();
+    	}
+    	else {
+    		System.out.println("***Resposta Invalida***".toUpperCase());
+    		menuInicial(tecla);
+    	}
+    }
+    
+    public void Iniciar(Scanner tecla) {
         //gera 10 numeros aleatorios de 0 a 9 em 3 conjuntos, 2 de 4 valores e 1 de 2 valores
         //o metodo faz com que os numeros aletorios nao se repitam dentro de seus conjuntos
         //apos a geracao o metodo vai executar as perguntas de acordo com os numeros gerados
-        Random gerador = new Random();
-        Player p1 = new Player();
+    	System.out.print("Digite o nome do(a) jogador(a): ");
+    	String nome = tecla.nextLine();
+        Player p1 = new Player(nome);
         PerguntaComplexa pc = new PerguntaComplexa();
         PerguntaMultiplaEscolha pm = new PerguntaMultiplaEscolha();
-        //primeiro conjunto de 4
+        
+        gerarNumeros();
+        
+        System.out.println("-Primeira Pergunta-");
+        pc.executarPergunta(primeiro, p1);
+        pc.executarPergunta(segundo, p1);
+        pc.executarPergunta(terceiro, p1);
+        pc.executarPergunta(quarto, p1);
+
+        pm.executarPergunta(quinto, p1);
+        pm.executarPergunta(sexto, p1);
+        pm.executarPergunta(setimo, p1);
+        pm.executarPergunta(oitavo, p1);
+        
+        p1.defineResultado();
+       
+        String resposta;
+        do {
+        System.out.println("Jogar novamente?\n[s] para sim [n] para não");
+        System.out.print("Resposta: ");
+        resposta = tecla.nextLine();
+        if(resposta.toLowerCase().equals("s")) {
+        	Iniciar(tecla);
+        }else if(resposta.toLowerCase().equals("n")){
+        	tecla.close();
+        	fecharJogo();
+        }
+        else {
+        	System.out.println("Comando não reconhecido");
+        }
+        }while(!resposta.toLowerCase().matches("s|n"));
+    }
+    
+    public void gerarNumeros() {
+    	//Gera os numeros para serem utilizados nas perguntas nao repetindo dentro de seus conjuntos
+    	Random gerador = new Random();
+    	//primeiro conjunto de 4
         primeiro = gerador.nextInt(qtd);
         segundo = verifica(primeiro, gerador);
         terceiro = verifica(primeiro, segundo, gerador);
@@ -32,7 +92,8 @@ public class Gerenciador {
         //ultimo conjunto de numeros
         nono = gerador.nextInt(qtd);
         decimo = verifica(nono, gerador);
-
+        
+        //demonstra os numeros criados, somente para visualizaçao em testes, deve estar comentado no codigo final.
         System.out.println(primeiro);
         System.out.println(segundo);
         System.out.println(terceiro);
@@ -43,19 +104,8 @@ public class Gerenciador {
         System.out.println(oitavo);
         System.out.println(nono);
         System.out.println(decimo);
-
-        pc.executarPergunta(primeiro, p1);
-        pc.executarPergunta(segundo, p1);
-        pc.executarPergunta(terceiro, p1);
-        pc.executarPergunta(quarto, p1);
-
-        pm.executarPergunta(quinto, p1);
-        pm.executarPergunta(sexto, p1);
-        pm.executarPergunta(setimo, p1);
-        pm.executarPergunta(oitavo, p1);
-
     }
-
+    
     public int verifica(int comparador, Random gerador) {
         int novo = 0;
         do {
@@ -79,4 +129,11 @@ public class Gerenciador {
         } while (novo == compara1 || novo == compara2 || novo == compara3);
         return novo;
     }
+    
+    public void fecharJogo() {
+    	System.out.println("Obrigado por jogar!");
+    	System.exit(0);
+    }
+    
+    
 }

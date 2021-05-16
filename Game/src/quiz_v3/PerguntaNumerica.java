@@ -1,13 +1,10 @@
 package quiz_v3;
 
-import java.util.Scanner;
-
 public class PerguntaNumerica extends Pergunta {
 
     private static final int N_PERGUNTAS = 1;
     private String[] perguntas = new String[N_PERGUNTAS];
     private int[] respostas = new int[N_PERGUNTAS];
-    private Scanner tecla = new Scanner(System.in);
 
     public PerguntaNumerica() {
         super(N_PERGUNTAS);
@@ -21,15 +18,7 @@ public class PerguntaNumerica extends Pergunta {
                 + "Digite o ano:";
         respostas[0] = 2019;
 
-    }
-
-    public void checarResposta(int numeroPergunta, int resposta, Player jogador) {                
-            if (respostas[numeroPergunta] == (resposta)) {
-                jogador.adicionaPontos();
-            } else {
-                jogador.retiraPontos();
-            }      
-    }    
+    }  
 
     @Override
     public boolean verificar(String resposta) {
@@ -38,7 +27,6 @@ public class PerguntaNumerica extends Pergunta {
     
     @Override
     public void executarPergunta(int numero, Player jogador) {
-        int resposta = 0;
         System.out.println(getPerguntas()[numero]);
         String respostaS = super.getTecla().nextLine().trim();
         while (verificar(respostaS)) {
@@ -48,9 +36,7 @@ public class PerguntaNumerica extends Pergunta {
             respostaS = super.getTecla().nextLine().trim();           
         }
         System.out.println("");
-        
-        resposta = Integer.parseInt(respostaS);      
-        checarResposta(numero, resposta, jogador);
+        checarResposta(numero, respostaS, jogador);
     }
 
     //getters
@@ -62,7 +48,14 @@ public class PerguntaNumerica extends Pergunta {
         return respostas;
     }
 
-    @Override //como nesse tipo de pergunta o vetor de resposta é int, esse método fica sobrando.
-    public void checarResposta(int numeroPergunta, String resposta, Player jogador) {}
+    @Override //como nesse tipo de pergunta o vetor de resposta � int, esse método fica sobrando.
+    public void checarResposta(int numeroPergunta, String resposta, Player jogador) {
+    	int respostaInt = Integer.parseInt(resposta);
+    	if (respostas[numeroPergunta] == (respostaInt)) {
+            jogador.adicionaPontos();
+        } else {
+            jogador.retiraPontos();
+        }		
+    }
 
 }
