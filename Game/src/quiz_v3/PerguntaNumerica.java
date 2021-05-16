@@ -18,13 +18,13 @@ public class PerguntaNumerica extends Pergunta {
                 + "Digite o ano:";
         respostas[0] = 2019;
 
-    }  
+    }
 
     @Override
     public boolean verificar(String resposta) {
         return !(resposta != null && resposta.matches("[0-9]*") && resposta != "");
     }
-    
+
     @Override
     public void executarPergunta(int numero, Player jogador) {
         System.out.println(getPerguntas()[numero]);
@@ -33,7 +33,7 @@ public class PerguntaNumerica extends Pergunta {
             System.out.println("");
             System.out.println("Resposta Invalida! Digite somente numeros positivos.");
             System.out.println(getPerguntas()[numero]);
-            respostaS = super.getTecla().nextLine().trim();           
+            respostaS = super.getTecla().nextLine().trim();
         }
         System.out.println("");
         checarResposta(numero, respostaS, jogador);
@@ -48,14 +48,14 @@ public class PerguntaNumerica extends Pergunta {
         return respostas;
     }
 
-    @Override //como nesse tipo de pergunta o vetor de resposta � int, esse método fica sobrando.
+    @Override //como nesse tipo de pergunta o vetor de resposta � int, esse método fica sobrando.
     public void checarResposta(int numeroPergunta, String resposta, Player jogador) {
-    	int respostaInt = Integer.parseInt(resposta);
-    	if (respostas[numeroPergunta] == (respostaInt)) {
+        int respostaInt = Integer.parseInt(resposta);
+        if (respostas[numeroPergunta] == (respostaInt)) {
             jogador.adicionaPontos();
         } else {
             jogador.retiraPontos();
-        }		
+        }
     }
 
 }

@@ -41,14 +41,14 @@ public class PerguntaComplexa extends Pergunta {
         //"respostaF" vai guardar os valores de resposta de cada pergunta juntos, "respostaA" vai guardar os valores individuais por um momento
         //"texto" vai ser utilizado para mostrar o texto das perguntas preenchido com as opcoes que o usuario escolher
         String respostaF = "", respostaA, texto;
-        
+
         //Primeira Pergunta
         System.out.println(getPerguntaIni()[numero][0]);
         System.out.println("Escolha a alternativa que completa o texto acima: ");
         System.out.println(escreveOpcoes(numero, getPerguntaIni()));
         System.out.print("Resposta: ");
         respostaA = super.getTecla().nextLine().toLowerCase().trim();
-        
+
         while (verificar(respostaA)) {
             System.out.println("");
             System.out.println("Resposta Invalida! Digite somente uma das alternativas listada.");
@@ -58,8 +58,8 @@ public class PerguntaComplexa extends Pergunta {
             System.out.print("Resposta: ");
             respostaA = super.getTecla().nextLine().toLowerCase().trim();
         }
-        respostaF += respostaA;              
-        
+        respostaF += respostaA;
+
         //Segunda Pergunta
         System.out.println("");
         texto = completarTexto(getPerguntaIni(), respostaA, numero);
@@ -69,7 +69,7 @@ public class PerguntaComplexa extends Pergunta {
         System.out.println(escreveOpcoes(numero, getPerguntaMeio()));
         System.out.print("Resposta: ");
         respostaA = super.getTecla().nextLine().toLowerCase().trim();
-        
+
         while (verificar(respostaA)) {
             System.out.println("");
             System.out.println("Resposta Invalida! Digite somente uma das alternativas listada.");
@@ -77,7 +77,7 @@ public class PerguntaComplexa extends Pergunta {
             System.out.println("Escolha a alternativa que completa o texto acima: ");
             System.out.println(escreveOpcoes(numero, getPerguntaMeio()));
             System.out.print("Resposta: ");
-            
+
             respostaA = super.getTecla().nextLine().toLowerCase().trim();
         }
         respostaF += respostaA;
@@ -91,7 +91,7 @@ public class PerguntaComplexa extends Pergunta {
         System.out.println(escreveOpcoes(numero, getPerguntaFim()));
         System.out.print("Resposta: ");
         respostaA = super.getTecla().nextLine().toLowerCase().trim();
-        
+
         while (verificar(respostaA)) {
             System.out.println("");
             System.out.println("Resposta Invalida! Digite somente uma das alternativas listada.");
@@ -102,7 +102,7 @@ public class PerguntaComplexa extends Pergunta {
             respostaA = super.getTecla().nextLine().toLowerCase().trim();
         }
         respostaF += respostaA;
-        
+
         texto = completarTexto(texto, getPerguntaFim(), respostaA, numero);
         System.out.println("Resultado: ");
         System.out.println(texto);

@@ -29,7 +29,7 @@ public abstract class Pergunta {
     //Principal:
     public final static void limpar() {
         //limpa a tela do console 
-        
+
     }
 
     public abstract void definirPerguntas();

@@ -5,8 +5,7 @@ public class PerguntaMultiplaEscolha extends Pergunta {
     private static final int N_PERGUNTAS = 10;
     private final String[] perguntas = new String[getQtdPerguntas()];
     private final String[] respostas = new String[N_PERGUNTAS];
-    
-    
+
     //Construtor:
     public PerguntaMultiplaEscolha() {
         super(N_PERGUNTAS);
@@ -21,7 +20,7 @@ public class PerguntaMultiplaEscolha extends Pergunta {
     public String[] getRespostas() {
         return respostas;
     }
-       
+
     //Principal:
     @Override
     public void definirPerguntas() {
@@ -38,7 +37,7 @@ public class PerguntaMultiplaEscolha extends Pergunta {
                 + "c) amarelo\n"
                 + "d) laranja\n";
         respostas[1] = "d";
-        
+
     }
 
     @Override
@@ -52,7 +51,7 @@ public class PerguntaMultiplaEscolha extends Pergunta {
 
     @Override
     public void executarPergunta(int numero, Player jogador) {
-        
+
         System.out.print(getPerguntas()[numero]);
         String resposta = super.getTecla().nextLine().toLowerCase().trim();
         while (verificar(resposta)) {
@@ -63,8 +62,7 @@ public class PerguntaMultiplaEscolha extends Pergunta {
         }
         System.out.println("");
 
-        checarResposta(numero, resposta, jogador);   
+        checarResposta(numero, resposta, jogador);
     }
-   
 
 }
