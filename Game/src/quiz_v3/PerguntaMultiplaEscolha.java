@@ -24,11 +24,11 @@ public class PerguntaMultiplaEscolha extends Pergunta {
     //Principal:
     @Override
     public void definirPerguntas() {       
-        perguntas[0] = "O meio ambiente é o conjunto de que influencia na vida dos seres vivos relacionados com a vida na terra \n"
+        perguntas[0] = "O meio ambiente Ã© o conjunto de que influencia na vida dos seres vivos relacionados com a vida na terra \n"
         		+ "a)	fauna e flora\n"
-        		+ "b)	fatores fisícos, biológicos e químicos\n"
+        		+ "b)	fatores fisï¿½cos, biolï¿½gicos e quï¿½micos\n"
         		+ "c)	biomassa e biomas\n"
-        		+ "d)	regiões afetadas \n"
+        		+ "d)	regiï¿½es afetadas \n"
         		+ "e)   animais \n";
         respostas[0] = "b";
         

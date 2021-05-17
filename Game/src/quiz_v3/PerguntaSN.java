@@ -1,11 +1,14 @@
 package quiz_v3;
 
+import java.util.Scanner;
+
 public class PerguntaSN extends Pergunta {
 
     //atributos
     private static final int N_PERGUNTAS = 1;
     private final String[] perguntas = new String[N_PERGUNTAS];
     private String[] respostas = new String[N_PERGUNTAS];
+    private Scanner tecla = new Scanner(System.in);
 
     public PerguntaSN() {
         super(N_PERGUNTAS);

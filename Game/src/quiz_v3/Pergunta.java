@@ -13,7 +13,7 @@ public abstract class Pergunta {
         setQtdPerguntas(quantidade);
     }
 
-    //Getters e Setters:
+    //Getters & Setters:
     public Scanner getTecla() {
         return tecla;
     }
@@ -44,12 +44,23 @@ public abstract class Pergunta {
     }
     
     public void verificarErro(String resposta, String tipo) throws RespostaInvalidaException {
-        if ("sn".equals(tipo.toLowerCase().trim())) {
-            if (verificar(resposta)) {
-                throw new RespostaInvalidaException("Resposta Invalida");
-                 
-            }
+        switch(tipo.toLowerCase().trim()) {
+            case "sn":           
+                if (verificar(resposta)) {
+                    throw new RespostaInvalidaException("Resposta Invalida! Digite somente [s] ou [n].");
+                }
+                break;
+            case "me":
+                if (verificar(resposta)) {
+                    throw new RespostaInvalidaException("Resposta Invalida! Digite somente umas das alternativas listadas.");
+                }
+                break;
+            case "n":
+                if (verificar(resposta)) {
+                    throw new RespostaInvalidaException("Resposta Invalida! Digite somente números positivos.");
+                }
         }
-    }
+    }    
+
 
 }
