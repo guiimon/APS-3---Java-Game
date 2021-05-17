@@ -23,21 +23,17 @@ public class PerguntaMultiplaEscolha extends Pergunta {
 
     //Principal:
     @Override
-    public void definirPerguntas() {
-        perguntas[0] = "Que cor as bananas tem quando madura?\n"
-                + "a) Verde\n"
-                + "b) Amarelo\n"
-                + "c) Rosa\n"
-                + "d) RGB\n";
+    public void definirPerguntas() {       
+        perguntas[0] = "O meio ambiente é o conjunto de que influencia na vida dos seres vivos relacionados com a vida na terra \n"
+        		+ "a)	fauna e flora\n"
+        		+ "b)	fatores fisícos, biológicos e químicos\n"
+        		+ "c)	biomassa e biomas\n"
+        		+ "d)	regiões afetadas \n"
+        		+ "e)   animais \n";
         respostas[0] = "b";
-
-        perguntas[1] = "Qual a cor da laranja?\n"
-                + "a) verde\n"
-                + "b) azul\n"
-                + "c) amarelo\n"
-                + "d) laranja\n";
-        respostas[1] = "d";
-
+        
+        perguntas[1] = "";
+        respostas[1] = "";
     }
 
     @Override
