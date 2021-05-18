@@ -29,13 +29,13 @@ public class Player {
     public void defineResultado() {
         System.out.println("Sua pontuacao foi de " + getPontuacao() + " pontos.");
         if (getPontuacao() < 0) {
-            System.out.println(nome + ", seu resultado e pior do que jamais esperavamos, nao ouse nem sair de casa voce e um risco.");
+            System.out.println(nome + ", seu resultado é pior do que jamais esperavamos, não ouse nem sair de casa você é um risco.");
         } else if (getPontuacao() >= 0 && getPontuacao() <= 30) {
-            System.out.println("Seu resultado foi mediano " + nome + ", ainda ha muitas coisas para aprender sobre a natureza.");
+            System.out.println("Seu resultado foi mediano " + nome + ", ainda há muitas coisas para aprender sobre a natureza.");
         } else if (getPontuacao() > 30 && getPontuacao() != 100) {
-            System.out.println("Otimo resultado " + nome + ", cometeu alguns erros mas esta muito bem em seus conhecimetos sobre a natureza");
-        } else {                
-            System.out.println("Muito bem, meus parabens, " + nome + ", voce e incrivel nao ha nada para ser ensinado a voce aqui.");
+            System.out.println("Ótimo resultado " + nome + ", cometeu alguns erros mas está muito bem em seus conhecimetos sobre a natureza");
+        } else {
+            System.out.println("Muito bem, meus parábens, " + nome + ", você é incrivel não há nada para ser ensinado a você aqui.");
         }
     }
 

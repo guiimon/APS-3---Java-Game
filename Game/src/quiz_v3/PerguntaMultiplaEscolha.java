@@ -5,8 +5,7 @@ public class PerguntaMultiplaEscolha extends Pergunta {
     private static final int N_PERGUNTAS = 10;
     private final String[] perguntas = new String[getQtdPerguntas()];
     private final String[] respostas = new String[N_PERGUNTAS];
-    
-    
+
     //Construtor:
     public PerguntaMultiplaEscolha() {
         super(N_PERGUNTAS);
@@ -21,24 +20,20 @@ public class PerguntaMultiplaEscolha extends Pergunta {
     public String[] getRespostas() {
         return respostas;
     }
-       
+
     //Principal:
     @Override
-    public void definirPerguntas() {
-        perguntas[0] = "Que cor as bananas tem quando madura?\n"
-                + "a) Verde\n"
-                + "b) Amarelo\n"
-                + "c) Rosa\n"
-                + "d) RGB\n";
+    public void definirPerguntas() {       
+        perguntas[0] = "O meio ambiente é o conjunto de que influencia na vida dos seres vivos relacionados com a vida na terra \n"
+        		+ "a)	fauna e flora\n"
+        		+ "b)	fatores fis�cos, biol�gicos e qu�micos\n"
+        		+ "c)	biomassa e biomas\n"
+        		+ "d)	regi�es afetadas \n"
+        		+ "e)   animais \n";
         respostas[0] = "b";
-
-        perguntas[1] = "Qual a cor da laranja?\n"
-                + "a) verde\n"
-                + "b) azul\n"
-                + "c) amarelo\n"
-                + "d) laranja\n";
-        respostas[1] = "d";
         
+        perguntas[1] = "";
+        respostas[1] = "";
     }
 
     @Override
@@ -52,7 +47,7 @@ public class PerguntaMultiplaEscolha extends Pergunta {
 
     @Override
     public void executarPergunta(int numero, Player jogador) {
-        
+
         System.out.print(getPerguntas()[numero]);
         String resposta = super.getTecla().nextLine().toLowerCase().trim();
         while (verificar(resposta)) {
@@ -63,8 +58,7 @@ public class PerguntaMultiplaEscolha extends Pergunta {
         }
         System.out.println("");
 
-        checarResposta(numero, resposta, jogador);   
+        checarResposta(numero, resposta, jogador);
     }
-   
 
 }

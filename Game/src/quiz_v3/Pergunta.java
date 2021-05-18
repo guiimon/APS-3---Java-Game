@@ -13,7 +13,7 @@ public abstract class Pergunta {
         setQtdPerguntas(quantidade);
     }
 
-    //Getters e Setters:
+    //Getters & Setters:
     public Scanner getTecla() {
         return tecla;
     }
@@ -40,7 +40,27 @@ public abstract class Pergunta {
 
     public boolean verificar(String resposta) {
         //return !"a".equals(resposta) && !"b".equals(resposta) && !"c".equals(resposta) && !"d".equals(resposta) && !"e".equals(resposta);
-        return !(resposta != null && resposta.matches("a|b|c|d|e") && resposta != "");
+        return !(resposta != null && resposta.matches("a|b|c|d|e") && !"".equals(resposta));
     }
+    
+    public void verificarErro(String resposta, String tipo) throws RespostaInvalidaException {
+        switch(tipo.toLowerCase().trim()) {
+            case "sn":           
+                if (verificar(resposta)) {
+                    throw new RespostaInvalidaException("Resposta Invalida! Digite somente [s] ou [n].");
+                }
+                break;
+            case "me":
+                if (verificar(resposta)) {
+                    throw new RespostaInvalidaException("Resposta Invalida! Digite somente umas das alternativas listadas.");
+                }
+                break;
+            case "n":
+                if (verificar(resposta)) {
+                    throw new RespostaInvalidaException("Resposta Invalida! Digite somente números positivos.");
+                }
+        }
+    }    
+
 
 }
