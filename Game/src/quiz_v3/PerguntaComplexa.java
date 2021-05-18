@@ -223,7 +223,7 @@ public class PerguntaComplexa extends Pergunta {
         respostas[0] = "bdb";
         
         //-Primeiro enunciado-
-        perguntaIni[1][0] = "a _____.";
+        perguntaIni[1][0] = "O fenomeno anormal do aumento de temperatura da terra refere-se a _____.";
         //-opçoes-
         perguntaIni[1][1] = "a)a.";
         perguntaIni[1][2] = "b)b.";
@@ -231,7 +231,7 @@ public class PerguntaComplexa extends Pergunta {
         perguntaIni[1][4] = "d)d.";
         perguntaIni[1][5] = "e)e.";
         //-Segundo Enunciado-
-        perguntaMeio[1][0] = "b _____.";
+        perguntaMeio[1][0] = "Este fenomeno ocorre devido a _____.";
         //-opções do segundo-
         perguntaMeio[1][1] = "a)a.";
         perguntaMeio[1][2] = "b)b.";
@@ -239,7 +239,7 @@ public class PerguntaComplexa extends Pergunta {
         perguntaMeio[1][4] = "d)d.";
         perguntaMeio[1][5] = "e)e.";
         //-terceiro Enunciado-
-        perguntaFim[1][0] = "c _____.";
+        perguntaFim[1][0] = "O principal gás resposável por esse fenômeno é o _____.";
         //-opcoes do terceiro-
         perguntaFim[1][1] = "a)a.";
         perguntaFim[1][2] = "b)b.";

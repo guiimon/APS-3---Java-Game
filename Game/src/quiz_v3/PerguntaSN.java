@@ -17,10 +17,11 @@ public class PerguntaSN extends Pergunta {
         perguntas[0] = "O efeito estufa é um evento decorrente da quebra da camada de ozônio?";
         respostas[0] = "n";
         
-        perguntas[1] = "s";
+        perguntas[1] = "A partir do lixo orgânico é possivel produzir energia elétrica?";
         respostas[1] = "s";
         
-        perguntas[2] = "n";
+        perguntas[2] = "A floresta amazônica, a maior floresta tropical do mundo, nunca sofreu queimadas e quase não sofre com desmatamento ilegal.\n"
+        		+ "essa frase está correta?";
         respostas[2] = "n";
     }
 
