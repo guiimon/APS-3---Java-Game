@@ -3,7 +3,7 @@ package quiz_v3;
 public class PerguntaComplexa extends Pergunta {
 
     //atributos
-    private static final int N_PERGUNTAS = 10;
+    private static final int N_PERGUNTAS = 3;
     private final String[][] perguntaIni = new String[super.getQtdPerguntas()][6];
     private final String[][] perguntaMeio = new String[super.getQtdPerguntas()][6];
     private final String[][] perguntaFim = new String[super.getQtdPerguntas()][6];
@@ -104,8 +104,9 @@ public class PerguntaComplexa extends Pergunta {
         respostaF += respostaA;
 
         texto = completarTexto(texto, getPerguntaFim(), respostaA, numero);
-        System.out.println("Resultado: ");
+        System.out.println("--Resultado das respostas--");
         System.out.println(texto);
+        System.out.println("");
         checarResposta(numero, respostaF, jogador);
     }
 
@@ -220,7 +221,60 @@ public class PerguntaComplexa extends Pergunta {
         perguntaFim[0][5] = "e)Abraca-lo e pedir desculpas por incomodar.";
         //-resposta composta da juncao das 3 letras corretas-
         respostas[0] = "bdb";
-
+        
+        //-Primeiro enunciado-
+        perguntaIni[1][0] = "a _____.";
+        //-opçoes-
+        perguntaIni[1][1] = "a)a.";
+        perguntaIni[1][2] = "b)b.";
+        perguntaIni[1][3] = "c)c.";
+        perguntaIni[1][4] = "d)d.";
+        perguntaIni[1][5] = "e)e.";
+        //-Segundo Enunciado-
+        perguntaMeio[1][0] = "b _____.";
+        //-opções do segundo-
+        perguntaMeio[1][1] = "a)a.";
+        perguntaMeio[1][2] = "b)b.";
+        perguntaMeio[1][3] = "c)c.";
+        perguntaMeio[1][4] = "d)d.";
+        perguntaMeio[1][5] = "e)e.";
+        //-terceiro Enunciado-
+        perguntaFim[1][0] = "c _____.";
+        //-opcoes do terceiro-
+        perguntaFim[1][1] = "a)a.";
+        perguntaFim[1][2] = "b)b.";
+        perguntaFim[1][3] = "c)c.";
+        perguntaFim[1][4] = "d)d.";
+        perguntaFim[1][5] = "e)e.";
+        //-resposta composta da juncao das 3 letras corretas-
+        respostas[1] = "abc";
+        
+      //-Primeiro enunciado-
+        perguntaIni[2][0] = "a _____.";
+        //-opçoes-
+        perguntaIni[2][1] = "a)a.";
+        perguntaIni[2][2] = "b)b.";
+        perguntaIni[2][3] = "c)c.";
+        perguntaIni[2][4] = "d)d.";
+        perguntaIni[2][5] = "e)e.";
+        //-Segundo Enunciado-
+        perguntaMeio[2][0] = "b _____.";
+        //-opções do segundo-
+        perguntaMeio[2][1] = "a)a.";
+        perguntaMeio[2][2] = "b)b.";
+        perguntaMeio[2][3] = "c)c.";
+        perguntaMeio[2][4] = "d)d.";
+        perguntaMeio[2][5] = "e)e.";
+        //-terceiro Enunciado-
+        perguntaFim[2][0] = "c _____.";
+        //-opcoes do terceiro-
+        perguntaFim[2][1] = "a)a.";
+        perguntaFim[2][2] = "b)b.";
+        perguntaFim[2][3] = "c)c.";
+        perguntaFim[2][4] = "d)d.";
+        perguntaFim[2][5] = "e)e.";
+        //-resposta composta da juncao das 3 letras corretas-
+        respostas[2] = "abc";
     }
 
 }

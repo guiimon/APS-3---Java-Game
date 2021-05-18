@@ -5,7 +5,7 @@ import java.util.Scanner;
 public abstract class Pergunta {
 
     //Atributos:
-    private static int qtdPerguntas;
+    private int qtdPerguntas;
     private Scanner tecla = new Scanner(System.in);
 
     //Construtor:
@@ -18,14 +18,14 @@ public abstract class Pergunta {
         return tecla;
     }
 
-    public static int getQtdPerguntas() {
-        return qtdPerguntas;
-    }
+    public int getQtdPerguntas() {
+		return qtdPerguntas;
+	}
 
-    public static void setQtdPerguntas(int qtdPerguntas) {
-        Pergunta.qtdPerguntas = qtdPerguntas;
-    }
-
+	public void setQtdPerguntas(int qtdPerguntas) {
+		this.qtdPerguntas = qtdPerguntas;
+	}
+    
     //Principal:
     public final static void limpar() {
         //limpa a tela do console 
@@ -60,7 +60,6 @@ public abstract class Pergunta {
                     throw new RespostaInvalidaException("Resposta Invalida! Digite somente números positivos.");
                 }
         }
-    }    
-
+    }
 
 }

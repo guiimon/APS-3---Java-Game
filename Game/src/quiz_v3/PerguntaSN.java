@@ -1,14 +1,11 @@
 package quiz_v3;
 
-import java.util.Scanner;
-
 public class PerguntaSN extends Pergunta {
 
     //atributos
-    private static final int N_PERGUNTAS = 1;
+    private static final int N_PERGUNTAS = 3;
     private final String[] perguntas = new String[N_PERGUNTAS];
     private String[] respostas = new String[N_PERGUNTAS];
-    private Scanner tecla = new Scanner(System.in);
 
     public PerguntaSN() {
         super(N_PERGUNTAS);
@@ -19,6 +16,12 @@ public class PerguntaSN extends Pergunta {
     public void definirPerguntas() {
         perguntas[0] = "O efeito estufa é um evento decorrente da quebra da camada de ozônio?";
         respostas[0] = "n";
+        
+        perguntas[1] = "s";
+        respostas[1] = "s";
+        
+        perguntas[2] = "n";
+        respostas[2] = "n";
     }
 
     @Override
@@ -42,6 +45,7 @@ public class PerguntaSN extends Pergunta {
             try {
                 System.out.println(getPerguntas()[numero]);
                 System.out.println("Responda com [s] para sim e [n] para não.");
+                System.out.print("Resposta: ");
                 resposta = super.getTecla().nextLine().toLowerCase().trim();
                 verificar(resposta);
                 verificarErro(resposta, "sn");

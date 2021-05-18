@@ -2,7 +2,7 @@ package quiz_v3;
 
 public class PerguntaMultiplaEscolha extends Pergunta {
 
-    private static final int N_PERGUNTAS = 10;
+    private static final int N_PERGUNTAS = 3;
     private final String[] perguntas = new String[getQtdPerguntas()];
     private final String[] respostas = new String[N_PERGUNTAS];
 
@@ -25,15 +25,28 @@ public class PerguntaMultiplaEscolha extends Pergunta {
     @Override
     public void definirPerguntas() {       
         perguntas[0] = "O meio ambiente é o conjunto de que influencia na vida dos seres vivos relacionados com a vida na terra \n"
-        		+ "a)	fauna e flora\n"
-        		+ "b)	fatores fis�cos, biol�gicos e qu�micos\n"
-        		+ "c)	biomassa e biomas\n"
-        		+ "d)	regi�es afetadas \n"
-        		+ "e)   animais \n";
+        		+ "a)fauna e flora\n"
+        		+ "b)fatores fisicos, biológicos e químicos\n"
+        		+ "c)biomassa e biomas\n"
+        		+ "d)regiões afetadas \n"
+        		+ "e)animais \n";
         respostas[0] = "b";
         
-        perguntas[1] = "";
-        respostas[1] = "";
+        perguntas[1] = "Opções\n"
+        		+ "a) \n"
+        		+ "b) \n"
+        		+ "c) \n"
+        		+ "d) \n"
+        		+ "e) \n";
+        respostas[1] = "a";
+        
+        perguntas[2] = "Opções\n"
+        		+ "a) \n"
+        		+ "b) \n"
+        		+ "c) \n"
+        		+ "d) \n"
+        		+ "e) \n";
+        respostas[2] = "a";
     }
 
     @Override

@@ -2,7 +2,7 @@ package quiz_v3;
 
 public class PerguntaNumerica extends Pergunta {
 
-    private static final int N_PERGUNTAS = 1;
+    private static final int N_PERGUNTAS = 5;
     private String[] perguntas = new String[N_PERGUNTAS];
     private int[] respostas = new int[N_PERGUNTAS];
 
@@ -40,9 +40,9 @@ public class PerguntaNumerica extends Pergunta {
                 + "Digite o século em formato númerico: ";
         respostas[3] = 18;
         
-        perguntas[4] = "Foi então que a ONU decidiu inaugurar a primeira grande conferência mundial sobre o meio ambiente\n "
-                + "que foi o grande marco para a questão ambiental, a chamada Conferência das Nações Unidas Sobre o  Ambien-"
-                + "te Humano, que se realizou em Estocolmo, na Suécia. Também conhecido como Conferência de Estocolmo,\n"
+        perguntas[4] = "Foi então que a ONU decidiu inaugurar a primeira grande conferência mundial sobre o meio ambiente\n"
+                + "que foi o grande marco para a questão ambiental, a chamada Conferência das Nações Unidas Sobre o  Ambiente "
+                + "Humano, que se realizou em Estocolmo, na Suécia. Também conhecido como Conferência de Estocolmo,\n"
                 + "Quando aconteceu essa conferência?\n"
                 + "Digite o ano: ";
         respostas[4] = 1972;
